@@ -1,8 +1,9 @@
 import boto3
 from botocore.exceptions import ClientError
-from src.session_manager import SessionManager
+
 from src.route53_client import Route53Client
 from src.route53_operations import Route53Operations
+from src.session_manager import SessionManager
 
 
 def delete_record(hosted_zone_id: str, record_name: str, record_type: str) -> None:
