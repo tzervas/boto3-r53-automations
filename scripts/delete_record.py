@@ -1,9 +1,7 @@
+from typing import Any, cast
+
 import boto3
 from botocore.exceptions import ClientError
-
-from src.route53_client import Route53Client
-from src.route53_operations import Route53Operations
-from src.session_manager import SessionManager
 
 
 def delete_record(hosted_zone_id: str, record_name: str, record_type: str) -> None:
@@ -18,11 +16,14 @@ def delete_record(hosted_zone_id: str, record_name: str, record_type: str) -> No
                 "Changes": [
                     {
                         "Action": "DELETE",
-                        "ResourceRecordSet": {
-                            "Name": record_name,
-                            "Type": record_type,
-                            "TTL": 300,  # TTL can be set to any value, here it's set to 300 seconds
-                        },
+                        "ResourceRecordSet": cast(
+                            Any,
+                            {
+                                "Name": record_name,
+                                "Type": record_type,
+                                "TTL": 300,  # Set to 300 seconds
+                            },
+                        ),
                     }
                 ]
             },

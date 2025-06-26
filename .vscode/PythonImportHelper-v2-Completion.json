@@ -396,6 +396,22 @@
         "documentation": {}
     },
     {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "List",
         "importPath": "typing",
         "description": "typing",
@@ -436,14 +452,6 @@
         "documentation": {}
     },
     {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
         "label": "Optional",
         "importPath": "typing",
         "description": "typing",
@@ -468,7 +476,47 @@
         "documentation": {}
     },
     {
-        "label": "Optional",
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "TypeVar",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "cast",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -484,7 +532,7 @@
         "documentation": {}
     },
     {
-        "label": "Dict",
+        "label": "Optional",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -516,7 +564,7 @@
         "documentation": {}
     },
     {
-        "label": "Any",
+        "label": "List",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -524,7 +572,7 @@
         "documentation": {}
     },
     {
-        "label": "List",
+        "label": "Optional",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -553,22 +601,6 @@
         "isExtraImport": true,
         "importPath": "collections",
         "description": "collections",
-        "detail": "collections",
-        "documentation": {}
-    },
-    {
-        "label": "defaultdict",
-        "importPath": "collections",
-        "description": "collections",
-        "isExtraImport": true,
-        "detail": "collections",
-        "documentation": {}
-    },
-    {
-        "label": "deque",
-        "importPath": "collections",
-        "description": "collections",
-        "isExtraImport": true,
         "detail": "collections",
         "documentation": {}
     },
@@ -665,6 +697,14 @@
         "documentation": {}
     },
     {
+        "label": "BotoCoreError",
+        "importPath": "botocore.exceptions",
+        "description": "botocore.exceptions",
+        "isExtraImport": true,
+        "detail": "botocore.exceptions",
+        "documentation": {}
+    },
+    {
         "label": "ClientError",
         "importPath": "botocore.exceptions",
         "description": "botocore.exceptions",
@@ -689,7 +729,23 @@
         "documentation": {}
     },
     {
-        "label": "BotoCoreError",
+        "label": "ClientError",
+        "importPath": "botocore.exceptions",
+        "description": "botocore.exceptions",
+        "isExtraImport": true,
+        "detail": "botocore.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "NoCredentialsError",
+        "importPath": "botocore.exceptions",
+        "description": "botocore.exceptions",
+        "isExtraImport": true,
+        "detail": "botocore.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "ProfileNotFound",
         "importPath": "botocore.exceptions",
         "description": "botocore.exceptions",
         "isExtraImport": true,
@@ -705,51 +761,19 @@
         "documentation": {}
     },
     {
-        "label": "SessionManager",
-        "importPath": "src.session_manager",
-        "description": "src.session_manager",
+        "label": "ClientError",
+        "importPath": "botocore.exceptions",
+        "description": "botocore.exceptions",
         "isExtraImport": true,
-        "detail": "src.session_manager",
+        "detail": "botocore.exceptions",
         "documentation": {}
     },
     {
-        "label": "SessionManager",
-        "importPath": "src.session_manager",
-        "description": "src.session_manager",
+        "label": "ClientError",
+        "importPath": "botocore.exceptions",
+        "description": "botocore.exceptions",
         "isExtraImport": true,
-        "detail": "src.session_manager",
-        "documentation": {}
-    },
-    {
-        "label": "SessionManager",
-        "importPath": "src.session_manager",
-        "description": "src.session_manager",
-        "isExtraImport": true,
-        "detail": "src.session_manager",
-        "documentation": {}
-    },
-    {
-        "label": "SessionManager",
-        "importPath": "src.session_manager",
-        "description": "src.session_manager",
-        "isExtraImport": true,
-        "detail": "src.session_manager",
-        "documentation": {}
-    },
-    {
-        "label": "SessionManager",
-        "importPath": "src.session_manager",
-        "description": "src.session_manager",
-        "isExtraImport": true,
-        "detail": "src.session_manager",
-        "documentation": {}
-    },
-    {
-        "label": "SessionManager",
-        "importPath": "src.session_manager",
-        "description": "src.session_manager",
-        "isExtraImport": true,
-        "detail": "src.session_manager",
+        "detail": "botocore.exceptions",
         "documentation": {}
     },
     {
@@ -801,11 +825,19 @@
         "documentation": {}
     },
     {
-        "label": "Route53Operations",
-        "importPath": "src.route53_operations",
-        "description": "src.route53_operations",
+        "label": "Route53Client",
+        "importPath": "src.route53_client",
+        "description": "src.route53_client",
         "isExtraImport": true,
-        "detail": "src.route53_operations",
+        "detail": "src.route53_client",
+        "documentation": {}
+    },
+    {
+        "label": "Route53Client",
+        "importPath": "src.route53_client",
+        "description": "src.route53_client",
+        "isExtraImport": true,
+        "detail": "src.route53_client",
         "documentation": {}
     },
     {
@@ -857,19 +889,99 @@
         "documentation": {}
     },
     {
-        "label": "wraps",
-        "importPath": "functools",
-        "description": "functools",
+        "label": "Route53Operations",
+        "importPath": "src.route53_operations",
+        "description": "src.route53_operations",
         "isExtraImport": true,
-        "detail": "functools",
+        "detail": "src.route53_operations",
         "documentation": {}
     },
     {
-        "label": "wraps",
-        "importPath": "functools",
-        "description": "functools",
+        "label": "Route53Operations",
+        "importPath": "src.route53_operations",
+        "description": "src.route53_operations",
         "isExtraImport": true,
-        "detail": "functools",
+        "detail": "src.route53_operations",
+        "documentation": {}
+    },
+    {
+        "label": "Route53Operations",
+        "importPath": "src.route53_operations",
+        "description": "src.route53_operations",
+        "isExtraImport": true,
+        "detail": "src.route53_operations",
+        "documentation": {}
+    },
+    {
+        "label": "Route53Operations",
+        "importPath": "src.route53_operations",
+        "description": "src.route53_operations",
+        "isExtraImport": true,
+        "detail": "src.route53_operations",
+        "documentation": {}
+    },
+    {
+        "label": "SessionManager",
+        "importPath": "src.session_manager",
+        "description": "src.session_manager",
+        "isExtraImport": true,
+        "detail": "src.session_manager",
+        "documentation": {}
+    },
+    {
+        "label": "SessionManager",
+        "importPath": "src.session_manager",
+        "description": "src.session_manager",
+        "isExtraImport": true,
+        "detail": "src.session_manager",
+        "documentation": {}
+    },
+    {
+        "label": "SessionManager",
+        "importPath": "src.session_manager",
+        "description": "src.session_manager",
+        "isExtraImport": true,
+        "detail": "src.session_manager",
+        "documentation": {}
+    },
+    {
+        "label": "SessionManager",
+        "importPath": "src.session_manager",
+        "description": "src.session_manager",
+        "isExtraImport": true,
+        "detail": "src.session_manager",
+        "documentation": {}
+    },
+    {
+        "label": "SessionManager",
+        "importPath": "src.session_manager",
+        "description": "src.session_manager",
+        "isExtraImport": true,
+        "detail": "src.session_manager",
+        "documentation": {}
+    },
+    {
+        "label": "SessionManager",
+        "importPath": "src.session_manager",
+        "description": "src.session_manager",
+        "isExtraImport": true,
+        "detail": "src.session_manager",
+        "documentation": {}
+    },
+    {
+        "label": "SessionManager",
+        "importPath": "src.session_manager",
+        "description": "src.session_manager",
+        "isExtraImport": true,
+        "detail": "src.session_manager",
+        "documentation": {}
+    },
+    {
+        "label": "SessionManager",
+        "importPath": "src.session_manager",
+        "description": "src.session_manager",
+        "isExtraImport": true,
+        "detail": "src.session_manager",
         "documentation": {}
     },
     {
@@ -882,6 +994,22 @@
         "documentation": {}
     },
     {
+        "label": "wraps",
+        "importPath": "functools",
+        "description": "functools",
+        "isExtraImport": true,
+        "detail": "functools",
+        "documentation": {}
+    },
+    {
+        "label": "wraps",
+        "importPath": "functools",
+        "description": "functools",
+        "isExtraImport": true,
+        "detail": "functools",
+        "documentation": {}
+    },
+    {
         "label": "Path",
         "importPath": "pathlib",
         "description": "pathlib",
@@ -890,12 +1018,19 @@
         "documentation": {}
     },
     {
-        "label": "time",
-        "kind": 6,
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
         "isExtraImport": true,
-        "importPath": "time",
-        "description": "time",
-        "detail": "time",
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
         "documentation": {}
     },
     {
@@ -905,6 +1040,15 @@
         "importPath": "threading",
         "description": "threading",
         "detail": "threading",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
         "documentation": {}
     },
     {
@@ -932,6 +1076,54 @@
         "documentation": {}
     },
     {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "patch",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "patch",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
         "label": "pytest",
         "kind": 6,
         "isExtraImport": true,
@@ -941,11 +1133,179 @@
         "documentation": {}
     },
     {
-        "label": "mock_route53",
+        "label": "Route53Error",
+        "importPath": "src.utils.error_handling",
+        "description": "src.utils.error_handling",
+        "isExtraImport": true,
+        "detail": "src.utils.error_handling",
+        "documentation": {}
+    },
+    {
+        "label": "Route53Error",
+        "importPath": "src.utils.error_handling",
+        "description": "src.utils.error_handling",
+        "isExtraImport": true,
+        "detail": "src.utils.error_handling",
+        "documentation": {}
+    },
+    {
+        "label": "Route53NotFoundError",
+        "importPath": "src.utils.error_handling",
+        "description": "src.utils.error_handling",
+        "isExtraImport": true,
+        "detail": "src.utils.error_handling",
+        "documentation": {}
+    },
+    {
+        "label": "Route53ValidationError",
+        "importPath": "src.utils.error_handling",
+        "description": "src.utils.error_handling",
+        "isExtraImport": true,
+        "detail": "src.utils.error_handling",
+        "documentation": {}
+    },
+    {
+        "label": "Route53Error",
+        "importPath": "src.utils.error_handling",
+        "description": "src.utils.error_handling",
+        "isExtraImport": true,
+        "detail": "src.utils.error_handling",
+        "documentation": {}
+    },
+    {
+        "label": "Route53NotFoundError",
+        "importPath": "src.utils.error_handling",
+        "description": "src.utils.error_handling",
+        "isExtraImport": true,
+        "detail": "src.utils.error_handling",
+        "documentation": {}
+    },
+    {
+        "label": "Route53PermissionError",
+        "importPath": "src.utils.error_handling",
+        "description": "src.utils.error_handling",
+        "isExtraImport": true,
+        "detail": "src.utils.error_handling",
+        "documentation": {}
+    },
+    {
+        "label": "Route53ThrottleError",
+        "importPath": "src.utils.error_handling",
+        "description": "src.utils.error_handling",
+        "isExtraImport": true,
+        "detail": "src.utils.error_handling",
+        "documentation": {}
+    },
+    {
+        "label": "Route53ValidationError",
+        "importPath": "src.utils.error_handling",
+        "description": "src.utils.error_handling",
+        "isExtraImport": true,
+        "detail": "src.utils.error_handling",
+        "documentation": {}
+    },
+    {
+        "label": "handle_aws_errors",
+        "importPath": "src.utils.error_handling",
+        "description": "src.utils.error_handling",
+        "isExtraImport": true,
+        "detail": "src.utils.error_handling",
+        "documentation": {}
+    },
+    {
+        "label": "validate_domain_name",
+        "importPath": "src.utils.error_handling",
+        "description": "src.utils.error_handling",
+        "isExtraImport": true,
+        "detail": "src.utils.error_handling",
+        "documentation": {}
+    },
+    {
+        "label": "validate_hosted_zone_id",
+        "importPath": "src.utils.error_handling",
+        "description": "src.utils.error_handling",
+        "isExtraImport": true,
+        "detail": "src.utils.error_handling",
+        "documentation": {}
+    },
+    {
+        "label": "Route53NotFoundError",
+        "importPath": "src.utils.error_handling",
+        "description": "src.utils.error_handling",
+        "isExtraImport": true,
+        "detail": "src.utils.error_handling",
+        "documentation": {}
+    },
+    {
+        "label": "Route53ValidationError",
+        "importPath": "src.utils.error_handling",
+        "description": "src.utils.error_handling",
+        "isExtraImport": true,
+        "detail": "src.utils.error_handling",
+        "documentation": {}
+    },
+    {
+        "label": "Route53Error",
+        "importPath": "src.utils.error_handling",
+        "description": "src.utils.error_handling",
+        "isExtraImport": true,
+        "detail": "src.utils.error_handling",
+        "documentation": {}
+    },
+    {
+        "label": "mock_aws",
         "importPath": "moto",
         "description": "moto",
         "isExtraImport": true,
         "detail": "moto",
+        "documentation": {}
+    },
+    {
+        "label": "mock_aws",
+        "importPath": "moto",
+        "description": "moto",
+        "isExtraImport": true,
+        "detail": "moto",
+        "documentation": {}
+    },
+    {
+        "label": "mock_aws",
+        "importPath": "moto",
+        "description": "moto",
+        "isExtraImport": true,
+        "detail": "moto",
+        "documentation": {}
+    },
+    {
+        "label": "RateLimiter",
+        "importPath": "src.utils.rate_limiter",
+        "description": "src.utils.rate_limiter",
+        "isExtraImport": true,
+        "detail": "src.utils.rate_limiter",
+        "documentation": {}
+    },
+    {
+        "label": "rate_limit",
+        "importPath": "src.utils.rate_limiter",
+        "description": "src.utils.rate_limiter",
+        "isExtraImport": true,
+        "detail": "src.utils.rate_limiter",
+        "documentation": {}
+    },
+    {
+        "label": "setup_logger",
+        "importPath": "src.utils.logging",
+        "description": "src.utils.logging",
+        "isExtraImport": true,
+        "detail": "src.utils.logging",
+        "documentation": {}
+    },
+    {
+        "label": "setup_logger",
+        "importPath": "src.utils.logging",
+        "description": "src.utils.logging",
+        "isExtraImport": true,
+        "detail": "src.utils.logging",
         "documentation": {}
     },
     {
@@ -2222,7 +2582,7 @@
         "kind": 2,
         "importPath": "scripts.list_hosted_zones",
         "description": "scripts.list_hosted_zones",
-        "peekOfCode": "def list_hosted_zones(self) -> List[dict]:\n    \"\"\"List all hosted zones.\"\"\"\n    try:\n        response = self.client.list_hosted_zones()\n        zones = response.get(\"HostedZones\", [])\n        print(f\"Found {len(zones)} hosted zones\")\n        return zones\n    except ClientError as e:\n        print(f\"❌ Error listing hosted zones: {e}\")\n        return []",
+        "peekOfCode": "def list_hosted_zones(client: Any) -> List[Dict[str, Any]]:\n    \"\"\"List all hosted zones.\"\"\"\n    try:\n        response = client.list_hosted_zones()\n        zones = response.get(\"HostedZones\", [])\n        print(f\"Found {len(zones)} hosted zones\")\n        return zones\n    except ClientError as e:\n        print(f\"❌ Error listing hosted zones: {e}\")\n        return []",
         "detail": "scripts.list_hosted_zones",
         "documentation": {}
     },
@@ -2303,7 +2663,7 @@
         "kind": 2,
         "importPath": "src.utils.error_handling",
         "description": "src.utils.error_handling",
-        "peekOfCode": "def safe_execute(\n    func: Callable,\n    *args,\n    logger: Optional[logging.Logger] = None,\n    default_return: Any = None,\n    **kwargs\n) -> Any:\n    \"\"\"\n    Execute a function safely with error handling.\n    Args:",
+        "peekOfCode": "def safe_execute(\n    func: Callable,\n    *args,\n    logger: Optional[logging.Logger] = None,\n    default_return: Any = None,\n    **kwargs,\n) -> Any:\n    \"\"\"\n    Execute a function safely with error handling.\n    Args:",
         "detail": "src.utils.error_handling",
         "documentation": {}
     },
@@ -2348,7 +2708,7 @@
         "kind": 6,
         "importPath": "src.utils.rate_limiter",
         "description": "src.utils.rate_limiter",
-        "peekOfCode": "class RateLimiter:\n    \"\"\"\n    Token bucket rate limiter for API calls.\n    This implements a token bucket algorithm that allows bursts up to the bucket size\n    while maintaining a steady rate over time.\n    \"\"\"\n    def __init__(\n        self,\n        max_calls: int = 5,\n        time_window: float = 1.0,",
+        "peekOfCode": "class RateLimiter:\n    \"\"\"\n    Token bucket rate limiter for API calls.\n    This implements a token bucket algorithm that allows bursts up to the bucket size\n    while maintaining a steady rate over time.\n    \"\"\"\n    max_calls: int\n    time_window: float\n    bucket_size: int\n    tokens: int",
         "detail": "src.utils.rate_limiter",
         "documentation": {}
     },
@@ -2357,7 +2717,7 @@
         "kind": 6,
         "importPath": "src.utils.rate_limiter",
         "description": "src.utils.rate_limiter",
-        "peekOfCode": "class AdaptiveRateLimiter:\n    \"\"\"\n    Adaptive rate limiter that adjusts based on response patterns.\n    This limiter starts with conservative limits and adapts based on\n    success/failure patterns and response times.\n    \"\"\"\n    def __init__(\n        self,\n        initial_rate: float = 2.0,\n        min_rate: float = 0.5,",
+        "peekOfCode": "class AdaptiveRateLimiter:\n    \"\"\"\n    Adaptive rate limiter that adjusts based on response patterns.\n    This limiter starts with conservative limits and adapts based on\n    success/failure patterns and response times.\n    \"\"\"\n    current_rate: float\n    min_rate: float\n    max_rate: float\n    backoff_factor: float",
         "detail": "src.utils.rate_limiter",
         "documentation": {}
     },
@@ -2366,7 +2726,7 @@
         "kind": 2,
         "importPath": "src.utils.rate_limiter",
         "description": "src.utils.rate_limiter",
-        "peekOfCode": "def rate_limit(\n    limiter_name: str = 'route53',\n    adaptive: bool = False,\n    logger: Optional[logging.Logger] = None\n) -> Callable:\n    \"\"\"\n    Decorator to apply rate limiting to functions.\n    Args:\n        limiter_name: Name of the rate limiter to use\n        adaptive: Whether to use adaptive rate limiting",
+        "peekOfCode": "def rate_limit(\n    limiter_name: str = \"route53\",\n    adaptive: bool = False,\n    logger: Optional[logging.Logger] = None,\n) -> Callable:\n    \"\"\"\n    Decorator to apply rate limiting to functions.\n    Args:\n        limiter_name: Name of the rate limiter to use\n        adaptive: Whether to use adaptive rate limiting",
         "detail": "src.utils.rate_limiter",
         "documentation": {}
     },
@@ -2375,7 +2735,7 @@
         "kind": 2,
         "importPath": "src.utils.rate_limiter",
         "description": "src.utils.rate_limiter",
-        "peekOfCode": "def get_rate_limiter(name: str) -> Optional[RateLimiter]:\n    \"\"\"\n    Get a rate limiter by name.\n    Args:\n        name: Name of the rate limiter\n    Returns:\n        Rate limiter instance or None if not found\n    \"\"\"\n    return _rate_limiters.get(name)\ndef set_rate_limiter(name: str, limiter: RateLimiter) -> None:",
+        "peekOfCode": "def get_rate_limiter(name: str) -> Optional[Union[RateLimiter, AdaptiveRateLimiter]]:\n    \"\"\"\n    Get a rate limiter by name.\n    Args:\n        name: Name of the rate limiter\n    Returns:\n        Rate limiter instance or None if not found\n    \"\"\"\n    return _rate_limiters.get(name)\ndef set_rate_limiter(name: str, limiter: Union[RateLimiter, AdaptiveRateLimiter]) -> None:",
         "detail": "src.utils.rate_limiter",
         "documentation": {}
     },
@@ -2384,7 +2744,16 @@
         "kind": 2,
         "importPath": "src.utils.rate_limiter",
         "description": "src.utils.rate_limiter",
-        "peekOfCode": "def set_rate_limiter(name: str, limiter: RateLimiter) -> None:\n    \"\"\"\n    Set or update a rate limiter.\n    Args:\n        name: Name of the rate limiter\n        limiter: Rate limiter instance\n    \"\"\"\n    _rate_limiters[name] = limiter",
+        "peekOfCode": "def set_rate_limiter(name: str, limiter: Union[RateLimiter, AdaptiveRateLimiter]) -> None:\n    \"\"\"\n    Set or update a rate limiter.\n    Args:\n        name: Name of the rate limiter\n        limiter: Rate limiter instance\n    \"\"\"\n    _rate_limiters[name] = limiter",
+        "detail": "src.utils.rate_limiter",
+        "documentation": {}
+    },
+    {
+        "label": "T",
+        "kind": 5,
+        "importPath": "src.utils.rate_limiter",
+        "description": "src.utils.rate_limiter",
+        "peekOfCode": "T = TypeVar('T')\nclass RateLimiter:\n    \"\"\"\n    Token bucket rate limiter for API calls.\n    This implements a token bucket algorithm that allows bursts up to the bucket size\n    while maintaining a steady rate over time.\n    \"\"\"\n    max_calls: int\n    time_window: float\n    bucket_size: int",
         "detail": "src.utils.rate_limiter",
         "documentation": {}
     },
@@ -2393,7 +2762,7 @@
         "kind": 5,
         "importPath": "src.utils.rate_limiter",
         "description": "src.utils.rate_limiter",
-        "peekOfCode": "_rate_limiters = {\n    'route53': RateLimiter(max_calls=5, time_window=1.0),  # AWS Route53 default limits\n    'route53_adaptive': AdaptiveRateLimiter(initial_rate=2.0)\n}\ndef rate_limit(\n    limiter_name: str = 'route53',\n    adaptive: bool = False,\n    logger: Optional[logging.Logger] = None\n) -> Callable:\n    \"\"\"",
+        "peekOfCode": "_rate_limiters = {\n    \"route53\": RateLimiter(max_calls=5, time_window=1.0),  # AWS Route53 default limits\n    \"route53_adaptive\": AdaptiveRateLimiter(initial_rate=2.0),\n}\ndef rate_limit(\n    limiter_name: str = \"route53\",\n    adaptive: bool = False,\n    logger: Optional[logging.Logger] = None,\n) -> Callable:\n    \"\"\"",
         "detail": "src.utils.rate_limiter",
         "documentation": {}
     },
@@ -2438,7 +2807,7 @@
         "kind": 6,
         "importPath": "src.records",
         "description": "src.records",
-        "peekOfCode": "class MXRecord(DnsRecord):\n    \"\"\"Class for MX records.\"\"\"\n    def __init__(self, name: str, ttl: int = 300, values: Optional[List[str]] = None):\n        \"\"\"\n        Initialize an MX record.\n        Args:\n            name: The name of the record.\n            ttl: Time to live in seconds (default: 300).\n            values: List of strings in the format 'preference mail_server' (e.g., '10 mail.example.com').\n        \"\"\"",
+        "peekOfCode": "class MXRecord(DnsRecord):\n    \"\"\"Class for MX records.\"\"\"\n    def __init__(self, name: str, ttl: int = 300, values: Optional[List[str]] = None):\n        \"\"\"\n        Initialize an MX record.\n        Args:\n            name: The name of the record.\n            ttl: Time to live in seconds (default: 300).\n            values: List of strings in the format 'preference mail_server'\n                   (e.g., '10 mail.example.com').",
         "detail": "src.records",
         "documentation": {}
     },
@@ -2474,7 +2843,7 @@
         "kind": 6,
         "importPath": "src.route53_client",
         "description": "src.route53_client",
-        "peekOfCode": "class Route53Client:\n    \"\"\"Manages a boto3 Route 53 client.\"\"\"\n    def __init__(self, session: boto3.Session):\n        \"\"\"\n        Initialize a Route 53 client.\n        Args:\n            session: A boto3 session object.\n        \"\"\"\n        self.client = session.client(\"route53\")\n    def get_client(self) -> Any:",
+        "peekOfCode": "class Route53Client:\n    \"\"\"Manages a boto3 Route 53 client.\"\"\"\n    def __init__(self, session: boto3.Session):\n        \"\"\"\n        Initialize a Route 53 client.\n        Args:\n            session: A boto3 session object.\n        \"\"\"\n        self.logger = get_logger(__name__)\n        try:",
         "detail": "src.route53_client",
         "documentation": {}
     },
@@ -2497,11 +2866,29 @@
         "documentation": {}
     },
     {
+        "label": "TestRoute53Client",
+        "kind": 6,
+        "importPath": "tests.test_boto3_client",
+        "description": "tests.test_boto3_client",
+        "peekOfCode": "class TestRoute53Client:\n    \"\"\"Test cases for Route53Client.\"\"\"\n    def test_init(self) -> None:\n        \"\"\"Test initialization with session.\"\"\"\n        mock_session = MagicMock()\n        client = Route53Client(mock_session)\n        assert client.session == mock_session\n    def test_get_client_success(self) -> None:\n        \"\"\"Test successful client creation.\"\"\"\n        mock_session = MagicMock()",
+        "detail": "tests.test_boto3_client",
+        "documentation": {}
+    },
+    {
+        "label": "TestSessionManager",
+        "kind": 6,
+        "importPath": "tests.test_boto3_session",
+        "description": "tests.test_boto3_session",
+        "peekOfCode": "class TestSessionManager:\n    \"\"\"Test cases for SessionManager.\"\"\"\n    @patch(\"boto3.Session\")\n    def test_init_default(self, mock_session: MagicMock) -> None:\n        \"\"\"Test default initialization.\"\"\"\n        mock_instance = MagicMock()\n        mock_session.return_value = mock_instance\n        session_manager = SessionManager()\n        assert session_manager.profile_name is None\n        assert session_manager.region_name == \"us-east-1\"",
+        "detail": "tests.test_boto3_session",
+        "documentation": {}
+    },
+    {
         "label": "route53_client",
         "kind": 2,
         "importPath": "tests.test_create_record",
         "description": "tests.test_create_record",
-        "peekOfCode": "def route53_client():\n    with mock_route53():\n        session = boto3.Session(region_name=\"us-east-1\")\n        yield session.client(\"route53\")\ndef test_create_dns_records(route53_client):\n    operations = Route53Operations(route53_client)\n    hosted_zone = route53_client.create_hosted_zone(\n        Name=\"example.com\", CallerReference=\"test\"\n    )\n    zone_id = hosted_zone[\"HostedZone\"][\"Id\"].split(\"/\")[-1]",
+        "peekOfCode": "def route53_client():\n    with mock_aws():\n        session = boto3.Session(region_name=\"us-east-1\")\n        yield session.client(\"route53\")\ndef test_create_dns_records(route53_client):\n    operations = Route53Operations(route53_client)\n    hosted_zone = route53_client.create_hosted_zone(\n        Name=\"example.com\", CallerReference=\"test\"\n    )\n    zone_id = hosted_zone[\"HostedZone\"][\"Id\"].split(\"/\")[-1]",
         "detail": "tests.test_create_record",
         "documentation": {}
     },
@@ -2515,11 +2902,182 @@
         "documentation": {}
     },
     {
+        "label": "TestRoute53OperationsDelete",
+        "kind": 6,
+        "importPath": "tests.test_delete_record",
+        "description": "tests.test_delete_record",
+        "peekOfCode": "class TestRoute53OperationsDelete:\n    \"\"\"Test cases for Route53Operations delete functionality.\"\"\"\n    def test_delete_dns_records_success(self, route53_client, hosted_zone):\n        \"\"\"Test successful deletion of DNS records.\"\"\"\n        operations = Route53Operations(route53_client)\n        # First create some records\n        operations.create_dns_record(\n            hosted_zone_id=hosted_zone,\n            domain=\"example.com\",\n            load_balancer_ip=\"192.168.1.100\",",
+        "detail": "tests.test_delete_record",
+        "documentation": {}
+    },
+    {
+        "label": "route53_client",
+        "kind": 2,
+        "importPath": "tests.test_delete_record",
+        "description": "tests.test_delete_record",
+        "peekOfCode": "def route53_client():\n    \"\"\"Provide a mocked Route53 client.\"\"\"\n    with mock_aws():\n        session = boto3.Session(region_name=\"us-east-1\")\n        yield session.client(\"route53\")\n@pytest.fixture\ndef hosted_zone(route53_client):\n    \"\"\"Create a test hosted zone.\"\"\"\n    hosted_zone = route53_client.create_hosted_zone(\n        Name=\"example.com\", CallerReference=\"test-delete\"",
+        "detail": "tests.test_delete_record",
+        "documentation": {}
+    },
+    {
+        "label": "hosted_zone",
+        "kind": 2,
+        "importPath": "tests.test_delete_record",
+        "description": "tests.test_delete_record",
+        "peekOfCode": "def hosted_zone(route53_client):\n    \"\"\"Create a test hosted zone.\"\"\"\n    hosted_zone = route53_client.create_hosted_zone(\n        Name=\"example.com\", CallerReference=\"test-delete\"\n    )\n    return hosted_zone[\"HostedZone\"][\"Id\"].split(\"/\")[-1]\nclass TestRoute53OperationsDelete:\n    \"\"\"Test cases for Route53Operations delete functionality.\"\"\"\n    def test_delete_dns_records_success(self, route53_client, hosted_zone):\n        \"\"\"Test successful deletion of DNS records.\"\"\"",
+        "detail": "tests.test_delete_record",
+        "documentation": {}
+    },
+    {
+        "label": "TestRoute53Exceptions",
+        "kind": 6,
+        "importPath": "tests.test_error_handling",
+        "description": "tests.test_error_handling",
+        "peekOfCode": "class TestRoute53Exceptions:\n    \"\"\"Test custom exception classes.\"\"\"\n    def test_route53_error(self):\n        \"\"\"Test base Route53Error exception.\"\"\"\n        error = Route53Error(\"Test error\")\n        assert str(error) == \"Test error\"\n        assert isinstance(error, Exception)\n    def test_route53_not_found_error(self):\n        \"\"\"Test Route53NotFoundError exception.\"\"\"\n        error = Route53NotFoundError(\"Resource not found\")",
+        "detail": "tests.test_error_handling",
+        "documentation": {}
+    },
+    {
+        "label": "TestHandleAwsErrors",
+        "kind": 6,
+        "importPath": "tests.test_error_handling",
+        "description": "tests.test_error_handling",
+        "peekOfCode": "class TestHandleAwsErrors:\n    \"\"\"Test handle_aws_errors decorator.\"\"\"\n    def test_handle_aws_errors_decorator_success(self):\n        \"\"\"Test decorator with successful function execution.\"\"\"\n        @handle_aws_errors()\n        def successful_function():\n            return \"success\"\n        result = successful_function()\n        assert result == \"success\"\n    def test_handle_aws_errors_client_error_not_found(self):",
+        "detail": "tests.test_error_handling",
+        "documentation": {}
+    },
+    {
+        "label": "TestValidationFunctions",
+        "kind": 6,
+        "importPath": "tests.test_error_handling",
+        "description": "tests.test_error_handling",
+        "peekOfCode": "class TestValidationFunctions:\n    \"\"\"Test validation utility functions.\"\"\"\n    def test_validate_hosted_zone_id_valid(self):\n        \"\"\"Test validation of valid hosted zone IDs.\"\"\"\n        valid_ids = [\n            \"Z1234567890123\",\n            \"Z1A2B3C4D5E6F7\",\n            \"ZABCDEFGHIJKLMN\",\n        ]\n        for zone_id in valid_ids:",
+        "detail": "tests.test_error_handling",
+        "documentation": {}
+    },
+    {
+        "label": "TestRateLimiter",
+        "kind": 6,
+        "importPath": "tests.test_rate_limiter",
+        "description": "tests.test_rate_limiter",
+        "peekOfCode": "class TestRateLimiter:\n    \"\"\"Test base RateLimiter class.\"\"\"\n    def test_base_rate_limiter(self) -> None:\n        \"\"\"Test base rate limiter interface.\"\"\"\n        limiter = RateLimiter()\n        # Abstract methods should raise NotImplementedError\n        with pytest.raises(NotImplementedError):\n            limiter.wait_for_token()\n        with pytest.raises(NotImplementedError):\n            limiter.reset()",
+        "detail": "tests.test_rate_limiter",
+        "documentation": {}
+    },
+    {
+        "label": "RateLimiterTest",
+        "kind": 6,
+        "importPath": "tests.test_rate_limiter",
+        "description": "tests.test_rate_limiter",
+        "peekOfCode": "class RateLimiterTest:\n    \"\"\"Tests for RateLimiter class.\"\"\"\n    def test_create_rate_limiter(self) -> None:\n        \"\"\"Test creation of a rate limiter.\"\"\"\n        limiter = RateLimiter(max_calls=5, time_window=1.0)\n        assert limiter.max_calls == 5\n        assert limiter.time_window == 1.0\n        assert limiter.bucket_size == 5\nclass TestRateLimitDecorator:\n    \"\"\"Test rate_limit decorator.\"\"\"",
+        "detail": "tests.test_rate_limiter",
+        "documentation": {}
+    },
+    {
+        "label": "TestRateLimitDecorator",
+        "kind": 6,
+        "importPath": "tests.test_rate_limiter",
+        "description": "tests.test_rate_limiter",
+        "peekOfCode": "class TestRateLimitDecorator:\n    \"\"\"Test rate_limit decorator.\"\"\"\n    def test_rate_limit_success(self) -> None:\n        \"\"\"Test successful function execution with rate limiting.\"\"\"\n        limiter = RateLimiter(max_calls=100)  # High rate for testing\n        @rate_limit(limiter)\n        def test_function() -> str:\n            return \"success\"\n        assert test_function() == \"success\"\n    def test_rate_limit_multiple_calls(self) -> None:",
+        "detail": "tests.test_rate_limiter",
+        "documentation": {}
+    },
+    {
+        "label": "TestRoute53OperationsUpdate",
+        "kind": 6,
+        "importPath": "tests.test_update_record",
+        "description": "tests.test_update_record",
+        "peekOfCode": "class TestRoute53OperationsUpdate:\n    \"\"\"Test cases for Route53Operations update functionality.\"\"\"\n    def test_list_records_success(self, route53_client: boto3.client, hosted_zone_with_records: str) -> None:\n        \"\"\"Test successful listing of DNS records.\"\"\"\n        operations = Route53Operations(route53_client)\n        records = operations.list_records(hosted_zone_with_records)\n        # Should have at least NS, SOA, and our A records\n        assert len(records) >= 4\n        # Check our created A records exist\n        a_records = [r for r in records if r[\"Type\"] == \"A\"]",
+        "detail": "tests.test_update_record",
+        "documentation": {}
+    },
+    {
+        "label": "route53_client",
+        "kind": 2,
+        "importPath": "tests.test_update_record",
+        "description": "tests.test_update_record",
+        "peekOfCode": "def route53_client() -> boto3.client:\n    \"\"\"Provide a mocked Route53 client.\"\"\"\n    with mock_aws():\n        session = boto3.Session(region_name=\"us-east-1\")\n        yield session.client(\"route53\")\n@pytest.fixture\ndef hosted_zone_with_records(route53_client: boto3.client) -> str:\n    \"\"\"Create a test hosted zone with existing records.\"\"\"\n    hosted_zone = route53_client.create_hosted_zone(\n        Name=\"example.com\", CallerReference=\"test-update\"",
+        "detail": "tests.test_update_record",
+        "documentation": {}
+    },
+    {
+        "label": "hosted_zone_with_records",
+        "kind": 2,
+        "importPath": "tests.test_update_record",
+        "description": "tests.test_update_record",
+        "peekOfCode": "def hosted_zone_with_records(route53_client: boto3.client) -> str:\n    \"\"\"Create a test hosted zone with existing records.\"\"\"\n    hosted_zone = route53_client.create_hosted_zone(\n        Name=\"example.com\", CallerReference=\"test-update\"\n    )\n    zone_id = hosted_zone[\"HostedZone\"][\"Id\"].split(\"/\")[-1]\n    # Create initial records\n    operations = Route53Operations(route53_client)\n    operations.create_dns_record(\n        hosted_zone_id=zone_id,",
+        "detail": "tests.test_update_record",
+        "documentation": {}
+    },
+    {
+        "label": "setup_cli_logging",
+        "kind": 2,
+        "importPath": "cli",
+        "description": "cli",
+        "peekOfCode": "def setup_cli_logging(verbose: bool = False) -> None:\n    \"\"\"Set up logging for CLI operations.\"\"\"\n    level = \"DEBUG\" if verbose else \"INFO\"\n    log_file = Path(\"logs/route53-cli.log\")\n    setup_logger(\"cli\", level=level, log_file=log_file)\ndef create_operations(\n    profile: Optional[str] = None, region: str = \"us-east-1\"\n) -> Route53Operations:\n    \"\"\"Create and return a Route53Operations instance.\"\"\"\n    session_manager = SessionManager(profile_name=profile, region_name=region)",
+        "detail": "cli",
+        "documentation": {}
+    },
+    {
+        "label": "create_operations",
+        "kind": 2,
+        "importPath": "cli",
+        "description": "cli",
+        "peekOfCode": "def create_operations(\n    profile: Optional[str] = None, region: str = \"us-east-1\"\n) -> Route53Operations:\n    \"\"\"Create and return a Route53Operations instance.\"\"\"\n    session_manager = SessionManager(profile_name=profile, region_name=region)\n    session = session_manager.get_session()\n    route53_client = Route53Client(session)\n    client = route53_client.get_client()\n    return Route53Operations(client)\ndef cmd_list_records(args: argparse.Namespace) -> None:",
+        "detail": "cli",
+        "documentation": {}
+    },
+    {
+        "label": "cmd_list_records",
+        "kind": 2,
+        "importPath": "cli",
+        "description": "cli",
+        "peekOfCode": "def cmd_list_records(args: argparse.Namespace) -> None:\n    \"\"\"List records in a hosted zone.\"\"\"\n    try:\n        operations = create_operations(args.profile, args.region)\n        records = operations.list_records(args.zone_id)\n        print(f\"Found {len(records)} records in zone {args.zone_id}:\")\n        for record in records:\n            record_type = record.get(\"Type\", \"Unknown\")\n            name = record.get(\"Name\", \"Unknown\")\n            if \"ResourceRecords\" in record:",
+        "detail": "cli",
+        "documentation": {}
+    },
+    {
+        "label": "cmd_create_record",
+        "kind": 2,
+        "importPath": "cli",
+        "description": "cli",
+        "peekOfCode": "def cmd_create_record(args: argparse.Namespace) -> None:\n    \"\"\"Create DNS records.\"\"\"\n    try:\n        operations = create_operations(args.profile, args.region)\n        change_id = operations.create_dns_record(\n            hosted_zone_id=args.zone_id,\n            domain=args.domain,\n            load_balancer_ip=args.ip,\n            services=args.services,\n        )",
+        "detail": "cli",
+        "documentation": {}
+    },
+    {
+        "label": "cmd_delete_records",
+        "kind": 2,
+        "importPath": "cli",
+        "description": "cli",
+        "peekOfCode": "def cmd_delete_records(args: argparse.Namespace) -> None:\n    \"\"\"Delete DNS records.\"\"\"\n    try:\n        operations = create_operations(args.profile, args.region)\n        change_id = operations.delete_dns_records(\n            hosted_zone_id=args.zone_id,\n            domain=args.domain,\n            services=args.services,\n        )\n        print(\"✅ Deleted DNS records successfully!\")",
+        "detail": "cli",
+        "documentation": {}
+    },
+    {
+        "label": "cmd_check_change",
+        "kind": 2,
+        "importPath": "cli",
+        "description": "cli",
+        "peekOfCode": "def cmd_check_change(args: argparse.Namespace) -> None:\n    \"\"\"Check the status of a change.\"\"\"\n    try:\n        operations = create_operations(args.profile, args.region)\n        status = operations.get_change_status(args.change_id)\n        print(f\"Change {args.change_id} status: {status}\")\n        if status == \"INSYNC\":\n            print(\"✅ Change has been propagated successfully!\")\n        elif status == \"PENDING\":\n            print(\"⏳ Change is still propagating...\")",
+        "detail": "cli",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "cli",
+        "description": "cli",
+        "peekOfCode": "def main() -> None:\n    \"\"\"Main CLI entry point.\"\"\"\n    parser = argparse.ArgumentParser(\n        description=\"Route 53 DNS automation tool\",\n        formatter_class=argparse.RawDescriptionHelpFormatter,\n        epilog=\"\"\"\nExamples:\n  %(prog)s list-records Z1234567890\n  %(prog)s create-record Z1234567890 example.com 10.0.0.100 api web\n  %(prog)s delete-records Z1234567890 example.com api web",
+        "detail": "cli",
+        "documentation": {}
+    },
+    {
         "label": "main",
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def main():\n    print(\"Hello from aws-boto3-modules!\")\nif __name__ == \"__main__\":\n    main()",
+        "peekOfCode": "def main() -> None:\n    \"\"\"Main function demonstrating Route 53 automation capabilities.\"\"\"\n    # Set up logging\n    log_file = Path(\"logs/route53-automation.log\")\n    logger = setup_logger(\"boto3-r53-automations\", level=\"INFO\", log_file=log_file)\n    logger.info(\"Starting Route 53 Automation Tool\")\n    logger.info(\"=\" * 50)\n    try:\n        # Initialize session manager\n        logger.info(\"Initializing AWS session...\")",
         "detail": "main",
         "documentation": {}
     }

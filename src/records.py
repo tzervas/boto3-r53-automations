@@ -236,7 +236,7 @@ RECORD_TYPES: Dict[str, Type[DnsRecord]] = {
 
 
 # Factory function to create record instances
-def create_record(record_type: str, **kwargs) -> DnsRecord:
+def create_record(record_type: str, **kwargs: Any) -> DnsRecord:
     """
     Create a DNS record instance based on the record type.
 

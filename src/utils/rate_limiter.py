@@ -2,7 +2,9 @@ import logging
 import threading
 import time
 from functools import wraps
-from typing import Callable, Optional
+from typing import Any, Callable, Optional, TypeVar, Union, cast
+
+T = TypeVar("T")
 
 
 class RateLimiter:
@@ -13,12 +15,19 @@ class RateLimiter:
     while maintaining a steady rate over time.
     """
 
+    max_calls: int
+    time_window: float
+    bucket_size: int
+    tokens: int
+    last_refill: float
+    lock: threading.Lock
+
     def __init__(
         self,
         max_calls: int = 5,
         time_window: float = 1.0,
         bucket_size: Optional[int] = None,
-    ):
+    ) -> None:
         """
         Initialize the rate limiter.
 
@@ -50,7 +59,7 @@ class RateLimiter:
             # Refill tokens based on elapsed time
             elapsed = now - self.last_refill
             tokens_to_add = elapsed * (self.max_calls / self.time_window)
-            self.tokens = min(self.bucket_size, self.tokens + tokens_to_add)
+            self.tokens = int(min(self.bucket_size, self.tokens + tokens_to_add))
             self.last_refill = now
 
             # Check if we have enough tokens
@@ -96,6 +105,16 @@ class AdaptiveRateLimiter:
     success/failure patterns and response times.
     """
 
+    current_rate: float
+    min_rate: float
+    max_rate: float
+    backoff_factor: float
+    recovery_factor: float
+    last_call: float
+    lock: threading.Lock
+    success_count: int
+    error_count: int
+
     def __init__(
         self,
         initial_rate: float = 2.0,
@@ -103,7 +122,7 @@ class AdaptiveRateLimiter:
         max_rate: float = 10.0,
         backoff_factor: float = 0.5,
         recovery_factor: float = 1.1,
-    ):
+    ) -> None:
         """
         Initialize adaptive rate limiter.
 
@@ -184,9 +203,9 @@ def rate_limit(
         Decorated function with rate limiting
     """
 
-    def decorator(func: Callable) -> Callable:
+    def decorator(func: Callable[..., T]) -> Callable[..., T]:
         @wraps(func)
-        def wrapper(*args, **kwargs):
+        def wrapper(*args: Any, **kwargs: Any) -> T:
             limiter_key = f"{limiter_name}_adaptive" if adaptive else limiter_name
             limiter = _rate_limiters.get(limiter_key)
 
@@ -223,7 +242,7 @@ def rate_limit(
                     raise
 
             else:  # Regular RateLimiter
-                if not limiter.wait_for_tokens(timeout=30.0):
+                if not cast(RateLimiter, limiter).wait_for_tokens(timeout=30.0):
                     if logger:
                         logger.error("Rate limiter timeout - request rejected")
                     raise TimeoutError("Rate limiter timeout")
@@ -235,7 +254,7 @@ def rate_limit(
     return decorator
 
 
-def get_rate_limiter(name: str) -> Optional[RateLimiter]:
+def get_rate_limiter(name: str) -> Optional[Union[RateLimiter, AdaptiveRateLimiter]]:
     """
     Get a rate limiter by name.
 
@@ -245,10 +264,14 @@ def get_rate_limiter(name: str) -> Optional[RateLimiter]:
     Returns:
         Rate limiter instance or None if not found
     """
-    return _rate_limiters.get(name)
+    return cast(
+        Optional[Union[RateLimiter, AdaptiveRateLimiter]], _rate_limiters.get(name)
+    )
 
 
-def set_rate_limiter(name: str, limiter: RateLimiter) -> None:
+def set_rate_limiter(
+    name: str, limiter: Union[RateLimiter, AdaptiveRateLimiter]
+) -> None:
     """
     Set or update a rate limiter.
 

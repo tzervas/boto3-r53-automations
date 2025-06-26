@@ -7,7 +7,7 @@ def list_hosted_zones(client: Any) -> List[Dict[str, Any]]:
     """List all hosted zones."""
     try:
         response = client.list_hosted_zones()
-        zones = response.get("HostedZones", [])
+        zones: List[Dict[str, Any]] = response.get("HostedZones", [])
         print(f"Found {len(zones)} hosted zones")
         return zones
     except ClientError as e:
