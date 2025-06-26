@@ -1,3 +1,4 @@
+<<<<<<< feature/production-ready-improvements
 #!/usr/bin/env python3
 """
 Main entry point for boto3-r53-automations.
@@ -75,6 +76,10 @@ def main() -> None:
         return
 
     logger.info("Route 53 automation tool demonstration completed successfully!")
+=======
+def main():
+    print("Hello from aws-boto3-modules!")
+>>>>>>> main
 
 
 if __name__ == "__main__":

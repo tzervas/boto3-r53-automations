@@ -1,14 +1,24 @@
 # tests/test_route53_operations.py
+<<<<<<< feature/production-ready-improvements
 import boto3
 import pytest
 from moto import mock_aws
 
+=======
+import pytest
+import boto3
+from moto import mock_route53
+>>>>>>> main
 from src.route53_operations import Route53Operations
 
 
 @pytest.fixture
 def route53_client():
+<<<<<<< feature/production-ready-improvements
     with mock_aws():
+=======
+    with mock_route53():
+>>>>>>> main
         session = boto3.Session(region_name="us-east-1")
         yield session.client("route53")
 
