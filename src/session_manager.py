@@ -56,7 +56,9 @@ class SessionManager:
                     "profile": self.profile_name,
                 }
             else:
-                return {"status": "No credentials found"}
+                msg = "Failed to get AWS credentials"
+                self.logger.warning(f"Could not retrieve credential info: {msg}")
+                raise Route53Error(msg)
         except Exception as e:
             self.logger.warning(f"Could not retrieve credential info: {e}")
-            return {"status": "Error retrieving credentials"}
+            raise Route53Error(f"Failed to get AWS credentials: {e}")
