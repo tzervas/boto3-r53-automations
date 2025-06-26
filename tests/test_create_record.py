@@ -1,4 +1,6 @@
 # tests/test_route53_operations.py
+from typing import Any
+
 import boto3
 import pytest
 from moto import mock_aws
@@ -7,13 +9,13 @@ from src.route53_operations import Route53Operations
 
 
 @pytest.fixture
-def route53_client():
+def route53_client() -> Any:
     with mock_aws():
         session = boto3.Session(region_name="us-east-1")
         yield session.client("route53")
 
 
-def test_create_dns_records(route53_client):
+def test_create_dns_records(route53_client: Any) -> None:
     operations = Route53Operations(route53_client)
     hosted_zone = route53_client.create_hosted_zone(
         Name="example.com", CallerReference="test"

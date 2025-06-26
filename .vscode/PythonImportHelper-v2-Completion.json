@@ -476,6 +476,38 @@
         "documentation": {}
     },
     {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "TypeVar",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "cast",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Any",
         "importPath": "typing",
         "description": "typing",
@@ -533,6 +565,14 @@
     },
     {
         "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -1037,14 +1077,6 @@
     },
     {
         "label": "MagicMock",
-        "importPath": "unittest.mock",
-        "description": "unittest.mock",
-        "isExtraImport": true,
-        "detail": "unittest.mock",
-        "documentation": {}
-    },
-    {
-        "label": "patch",
         "importPath": "unittest.mock",
         "description": "unittest.mock",
         "isExtraImport": true,
@@ -2676,7 +2708,7 @@
         "kind": 6,
         "importPath": "src.utils.rate_limiter",
         "description": "src.utils.rate_limiter",
-        "peekOfCode": "class RateLimiter:\n    \"\"\"\n    Token bucket rate limiter for API calls.\n    This implements a token bucket algorithm that allows bursts up to the bucket size\n    while maintaining a steady rate over time.\n    \"\"\"\n    def __init__(\n        self,\n        max_calls: int = 5,\n        time_window: float = 1.0,",
+        "peekOfCode": "class RateLimiter:\n    \"\"\"\n    Token bucket rate limiter for API calls.\n    This implements a token bucket algorithm that allows bursts up to the bucket size\n    while maintaining a steady rate over time.\n    \"\"\"\n    max_calls: int\n    time_window: float\n    bucket_size: int\n    tokens: int",
         "detail": "src.utils.rate_limiter",
         "documentation": {}
     },
@@ -2685,7 +2717,7 @@
         "kind": 6,
         "importPath": "src.utils.rate_limiter",
         "description": "src.utils.rate_limiter",
-        "peekOfCode": "class AdaptiveRateLimiter:\n    \"\"\"\n    Adaptive rate limiter that adjusts based on response patterns.\n    This limiter starts with conservative limits and adapts based on\n    success/failure patterns and response times.\n    \"\"\"\n    def __init__(\n        self,\n        initial_rate: float = 2.0,\n        min_rate: float = 0.5,",
+        "peekOfCode": "class AdaptiveRateLimiter:\n    \"\"\"\n    Adaptive rate limiter that adjusts based on response patterns.\n    This limiter starts with conservative limits and adapts based on\n    success/failure patterns and response times.\n    \"\"\"\n    current_rate: float\n    min_rate: float\n    max_rate: float\n    backoff_factor: float",
         "detail": "src.utils.rate_limiter",
         "documentation": {}
     },
@@ -2703,7 +2735,7 @@
         "kind": 2,
         "importPath": "src.utils.rate_limiter",
         "description": "src.utils.rate_limiter",
-        "peekOfCode": "def get_rate_limiter(name: str) -> Optional[RateLimiter]:\n    \"\"\"\n    Get a rate limiter by name.\n    Args:\n        name: Name of the rate limiter\n    Returns:\n        Rate limiter instance or None if not found\n    \"\"\"\n    return _rate_limiters.get(name)\ndef set_rate_limiter(name: str, limiter: RateLimiter) -> None:",
+        "peekOfCode": "def get_rate_limiter(name: str) -> Optional[Union[RateLimiter, AdaptiveRateLimiter]]:\n    \"\"\"\n    Get a rate limiter by name.\n    Args:\n        name: Name of the rate limiter\n    Returns:\n        Rate limiter instance or None if not found\n    \"\"\"\n    return _rate_limiters.get(name)\ndef set_rate_limiter(name: str, limiter: Union[RateLimiter, AdaptiveRateLimiter]) -> None:",
         "detail": "src.utils.rate_limiter",
         "documentation": {}
     },
@@ -2712,7 +2744,16 @@
         "kind": 2,
         "importPath": "src.utils.rate_limiter",
         "description": "src.utils.rate_limiter",
-        "peekOfCode": "def set_rate_limiter(name: str, limiter: RateLimiter) -> None:\n    \"\"\"\n    Set or update a rate limiter.\n    Args:\n        name: Name of the rate limiter\n        limiter: Rate limiter instance\n    \"\"\"\n    _rate_limiters[name] = limiter",
+        "peekOfCode": "def set_rate_limiter(name: str, limiter: Union[RateLimiter, AdaptiveRateLimiter]) -> None:\n    \"\"\"\n    Set or update a rate limiter.\n    Args:\n        name: Name of the rate limiter\n        limiter: Rate limiter instance\n    \"\"\"\n    _rate_limiters[name] = limiter",
+        "detail": "src.utils.rate_limiter",
+        "documentation": {}
+    },
+    {
+        "label": "T",
+        "kind": 5,
+        "importPath": "src.utils.rate_limiter",
+        "description": "src.utils.rate_limiter",
+        "peekOfCode": "T = TypeVar('T')\nclass RateLimiter:\n    \"\"\"\n    Token bucket rate limiter for API calls.\n    This implements a token bucket algorithm that allows bursts up to the bucket size\n    while maintaining a steady rate over time.\n    \"\"\"\n    max_calls: int\n    time_window: float\n    bucket_size: int",
         "detail": "src.utils.rate_limiter",
         "documentation": {}
     },
@@ -2829,7 +2870,7 @@
         "kind": 6,
         "importPath": "tests.test_boto3_client",
         "description": "tests.test_boto3_client",
-        "peekOfCode": "class TestRoute53Client:\n    \"\"\"Test cases for Route53Client.\"\"\"\n    def test_init(self):\n        \"\"\"Test initialization with session.\"\"\"\n        mock_session = MagicMock()\n        client = Route53Client(mock_session)\n        assert client.session == mock_session\n    def test_get_client_success(self):\n        \"\"\"Test successful client creation.\"\"\"\n        mock_session = MagicMock()",
+        "peekOfCode": "class TestRoute53Client:\n    \"\"\"Test cases for Route53Client.\"\"\"\n    def test_init(self) -> None:\n        \"\"\"Test initialization with session.\"\"\"\n        mock_session = MagicMock()\n        client = Route53Client(mock_session)\n        assert client.session == mock_session\n    def test_get_client_success(self) -> None:\n        \"\"\"Test successful client creation.\"\"\"\n        mock_session = MagicMock()",
         "detail": "tests.test_boto3_client",
         "documentation": {}
     },
@@ -2838,7 +2879,7 @@
         "kind": 6,
         "importPath": "tests.test_boto3_session",
         "description": "tests.test_boto3_session",
-        "peekOfCode": "class TestSessionManager:\n    \"\"\"Test cases for SessionManager.\"\"\"\n    @patch(\"boto3.Session\")\n    def test_init_default(self, mock_session):\n        \"\"\"Test default initialization.\"\"\"\n        mock_instance = MagicMock()\n        mock_session.return_value = mock_instance\n        session_manager = SessionManager()\n        assert session_manager.profile_name is None\n        assert session_manager.region_name == \"us-east-1\"",
+        "peekOfCode": "class TestSessionManager:\n    \"\"\"Test cases for SessionManager.\"\"\"\n    @patch(\"boto3.Session\")\n    def test_init_default(self, mock_session: MagicMock) -> None:\n        \"\"\"Test default initialization.\"\"\"\n        mock_instance = MagicMock()\n        mock_session.return_value = mock_instance\n        session_manager = SessionManager()\n        assert session_manager.profile_name is None\n        assert session_manager.region_name == \"us-east-1\"",
         "detail": "tests.test_boto3_session",
         "documentation": {}
     },
@@ -2919,7 +2960,7 @@
         "kind": 6,
         "importPath": "tests.test_rate_limiter",
         "description": "tests.test_rate_limiter",
-        "peekOfCode": "class TestRateLimiter:\n    \"\"\"Test base RateLimiter class.\"\"\"\n    def test_base_rate_limiter(self):\n        \"\"\"Test base rate limiter interface.\"\"\"\n        limiter = RateLimiter()\n        # Abstract methods should raise NotImplementedError\n        with pytest.raises(NotImplementedError):\n            limiter.wait_for_token()\n        with pytest.raises(NotImplementedError):\n            limiter.reset()",
+        "peekOfCode": "class TestRateLimiter:\n    \"\"\"Test base RateLimiter class.\"\"\"\n    def test_base_rate_limiter(self) -> None:\n        \"\"\"Test base rate limiter interface.\"\"\"\n        limiter = RateLimiter()\n        # Abstract methods should raise NotImplementedError\n        with pytest.raises(NotImplementedError):\n            limiter.wait_for_token()\n        with pytest.raises(NotImplementedError):\n            limiter.reset()",
         "detail": "tests.test_rate_limiter",
         "documentation": {}
     },
@@ -2928,7 +2969,7 @@
         "kind": 6,
         "importPath": "tests.test_rate_limiter",
         "description": "tests.test_rate_limiter",
-        "peekOfCode": "class RateLimiterTest:\n    \"\"\"Tests for RateLimiter class.\"\"\"\n    def test_create_rate_limiter(self):\n        \"\"\"Test creation of a rate limiter.\"\"\"\n        limiter = RateLimiter(max_calls=5, time_window=1.0)\n        assert limiter.max_calls == 5\n        assert limiter.time_window == 1.0\n        assert limiter.bucket_size == 5\nclass TestRateLimitDecorator:\n    \"\"\"Test rate_limit decorator.\"\"\"",
+        "peekOfCode": "class RateLimiterTest:\n    \"\"\"Tests for RateLimiter class.\"\"\"\n    def test_create_rate_limiter(self) -> None:\n        \"\"\"Test creation of a rate limiter.\"\"\"\n        limiter = RateLimiter(max_calls=5, time_window=1.0)\n        assert limiter.max_calls == 5\n        assert limiter.time_window == 1.0\n        assert limiter.bucket_size == 5\nclass TestRateLimitDecorator:\n    \"\"\"Test rate_limit decorator.\"\"\"",
         "detail": "tests.test_rate_limiter",
         "documentation": {}
     },
@@ -2937,7 +2978,7 @@
         "kind": 6,
         "importPath": "tests.test_rate_limiter",
         "description": "tests.test_rate_limiter",
-        "peekOfCode": "class TestRateLimitDecorator:\n    \"\"\"Test rate_limit decorator.\"\"\"\n    def test_rate_limit_success(self):\n        \"\"\"Test successful function execution with rate limiting.\"\"\"\n        limiter = RateLimiter(max_calls=100)  # High rate for testing\n        @rate_limit(limiter)\n        def test_function():\n            return \"success\"\n        assert test_function() == \"success\"\n    def test_rate_limit_multiple_calls(self):",
+        "peekOfCode": "class TestRateLimitDecorator:\n    \"\"\"Test rate_limit decorator.\"\"\"\n    def test_rate_limit_success(self) -> None:\n        \"\"\"Test successful function execution with rate limiting.\"\"\"\n        limiter = RateLimiter(max_calls=100)  # High rate for testing\n        @rate_limit(limiter)\n        def test_function() -> str:\n            return \"success\"\n        assert test_function() == \"success\"\n    def test_rate_limit_multiple_calls(self) -> None:",
         "detail": "tests.test_rate_limiter",
         "documentation": {}
     },
@@ -2946,7 +2987,7 @@
         "kind": 6,
         "importPath": "tests.test_update_record",
         "description": "tests.test_update_record",
-        "peekOfCode": "class TestRoute53OperationsUpdate:\n    \"\"\"Test cases for Route53Operations update functionality.\"\"\"\n    def test_list_records_success(self, route53_client, hosted_zone_with_records):\n        \"\"\"Test successful listing of DNS records.\"\"\"\n        operations = Route53Operations(route53_client)\n        records = operations.list_records(hosted_zone_with_records)\n        # Should have at least NS, SOA, and our A records\n        assert len(records) >= 4\n        # Check our created A records exist\n        a_records = [r for r in records if r[\"Type\"] == \"A\"]",
+        "peekOfCode": "class TestRoute53OperationsUpdate:\n    \"\"\"Test cases for Route53Operations update functionality.\"\"\"\n    def test_list_records_success(self, route53_client: boto3.client, hosted_zone_with_records: str) -> None:\n        \"\"\"Test successful listing of DNS records.\"\"\"\n        operations = Route53Operations(route53_client)\n        records = operations.list_records(hosted_zone_with_records)\n        # Should have at least NS, SOA, and our A records\n        assert len(records) >= 4\n        # Check our created A records exist\n        a_records = [r for r in records if r[\"Type\"] == \"A\"]",
         "detail": "tests.test_update_record",
         "documentation": {}
     },
@@ -2955,7 +2996,7 @@
         "kind": 2,
         "importPath": "tests.test_update_record",
         "description": "tests.test_update_record",
-        "peekOfCode": "def route53_client():\n    \"\"\"Provide a mocked Route53 client.\"\"\"\n    with mock_aws():\n        session = boto3.Session(region_name=\"us-east-1\")\n        yield session.client(\"route53\")\n@pytest.fixture\ndef hosted_zone_with_records(route53_client):\n    \"\"\"Create a test hosted zone with existing records.\"\"\"\n    hosted_zone = route53_client.create_hosted_zone(\n        Name=\"example.com\", CallerReference=\"test-update\"",
+        "peekOfCode": "def route53_client() -> boto3.client:\n    \"\"\"Provide a mocked Route53 client.\"\"\"\n    with mock_aws():\n        session = boto3.Session(region_name=\"us-east-1\")\n        yield session.client(\"route53\")\n@pytest.fixture\ndef hosted_zone_with_records(route53_client: boto3.client) -> str:\n    \"\"\"Create a test hosted zone with existing records.\"\"\"\n    hosted_zone = route53_client.create_hosted_zone(\n        Name=\"example.com\", CallerReference=\"test-update\"",
         "detail": "tests.test_update_record",
         "documentation": {}
     },
@@ -2964,7 +3005,7 @@
         "kind": 2,
         "importPath": "tests.test_update_record",
         "description": "tests.test_update_record",
-        "peekOfCode": "def hosted_zone_with_records(route53_client):\n    \"\"\"Create a test hosted zone with existing records.\"\"\"\n    hosted_zone = route53_client.create_hosted_zone(\n        Name=\"example.com\", CallerReference=\"test-update\"\n    )\n    zone_id = hosted_zone[\"HostedZone\"][\"Id\"].split(\"/\")[-1]\n    # Create initial records\n    operations = Route53Operations(route53_client)\n    operations.create_dns_record(\n        hosted_zone_id=zone_id,",
+        "peekOfCode": "def hosted_zone_with_records(route53_client: boto3.client) -> str:\n    \"\"\"Create a test hosted zone with existing records.\"\"\"\n    hosted_zone = route53_client.create_hosted_zone(\n        Name=\"example.com\", CallerReference=\"test-update\"\n    )\n    zone_id = hosted_zone[\"HostedZone\"][\"Id\"].split(\"/\")[-1]\n    # Create initial records\n    operations = Route53Operations(route53_client)\n    operations.create_dns_record(\n        hosted_zone_id=zone_id,",
         "detail": "tests.test_update_record",
         "documentation": {}
     },

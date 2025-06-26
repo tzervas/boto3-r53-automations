@@ -2,7 +2,6 @@
 
 from unittest.mock import MagicMock, patch
 
-import boto3
 import pytest
 from botocore.exceptions import NoCredentialsError, ProfileNotFound
 
@@ -14,7 +13,7 @@ class TestSessionManager:
     """Test cases for SessionManager."""
 
     @patch("boto3.Session")
-    def test_init_default(self, mock_session):
+    def test_init_default(self, mock_session: MagicMock) -> None:
         """Test default initialization."""
         mock_instance = MagicMock()
         mock_session.return_value = mock_instance
@@ -24,7 +23,7 @@ class TestSessionManager:
         assert session_manager.region_name == "us-east-1"
 
     @patch("boto3.Session")
-    def test_init_with_params(self, mock_session):
+    def test_init_with_params(self, mock_session: MagicMock) -> None:
         """Test initialization with custom parameters."""
         mock_instance = MagicMock()
         mock_session.return_value = mock_instance
@@ -36,7 +35,7 @@ class TestSessionManager:
         assert session_manager.region_name == "us-west-2"
 
     @patch("boto3.Session")
-    def test_get_session_success(self, mock_session):
+    def test_get_session_success(self, mock_session: MagicMock) -> None:
         """Test successful session creation."""
         mock_instance = MagicMock()
         mock_session.return_value = mock_instance
@@ -48,15 +47,15 @@ class TestSessionManager:
         mock_session.assert_called_once_with(profile_name=None, region_name="us-east-1")
 
     @patch("boto3.Session")
-    def test_get_session_with_profile(self, mock_session):
+    def test_get_session_with_profile(self, mock_session: MagicMock) -> None:
         """Test session creation with specific profile."""
-        session_manager = SessionManager(profile_name="test-profile")
+        SessionManager(profile_name="test-profile")
         mock_session.assert_called_once_with(
             profile_name="test-profile", region_name="us-east-1"
         )
 
     @patch("boto3.Session")
-    def test_get_session_profile_not_found(self, mock_session):
+    def test_get_session_profile_not_found(self, mock_session: MagicMock) -> None:
         """Test session creation with invalid profile."""
         mock_session.side_effect = ProfileNotFound(profile="invalid-profile")
 
@@ -66,7 +65,7 @@ class TestSessionManager:
             SessionManager(profile_name="invalid-profile")
 
     @patch("boto3.Session")
-    def test_get_session_no_credentials(self, mock_session):
+    def test_get_session_no_credentials(self, mock_session: MagicMock) -> None:
         """Test session creation with no credentials."""
         mock_session.side_effect = NoCredentialsError()
 
@@ -74,7 +73,7 @@ class TestSessionManager:
             SessionManager()
 
     @patch("boto3.Session")
-    def test_get_credentials_success(self, mock_session):
+    def test_get_credentials_success(self, mock_session: MagicMock) -> None:
         """Test successful credential information retrieval."""
         mock_creds = MagicMock()
         mock_creds.access_key = "AKIA1234TEST890"
@@ -97,7 +96,7 @@ class TestSessionManager:
         assert result == expected
 
     @patch("boto3.Session")
-    def test_get_credentials_with_token(self, mock_session):
+    def test_get_credentials_with_token(self, mock_session: MagicMock) -> None:
         """Test credential information retrieval with session token."""
         mock_creds = MagicMock()
         mock_creds.access_key = "AKIA1234TEST890"
@@ -120,7 +119,7 @@ class TestSessionManager:
         assert result == expected
 
     @patch("boto3.Session")
-    def test_get_credentials_no_credentials(self, mock_session):
+    def test_get_credentials_no_credentials(self, mock_session: MagicMock) -> None:
         """Test credential information retrieval with no credentials."""
         mock_instance = MagicMock()
         mock_instance.get_credentials.return_value = None

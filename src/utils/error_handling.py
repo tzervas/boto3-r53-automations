@@ -61,7 +61,7 @@ def handle_aws_errors(
 
     def decorator(func: Callable) -> Callable:
         @wraps(func)
-        def wrapper(*args, **kwargs) -> Any:
+        def wrapper(*args: Any, **kwargs: Any) -> Any:
             try:
                 return func(*args, **kwargs)
             except ClientError as e:
@@ -123,11 +123,11 @@ def handle_aws_errors(
 
 
 def safe_execute(
-    func: Callable,
-    *args,
+    func: Callable[..., Any],
+    *args: Any,
     logger: Optional[logging.Logger] = None,
     default_return: Any = None,
-    **kwargs,
+    **kwargs: Any,
 ) -> Any:
     """
     Execute a function safely with error handling.

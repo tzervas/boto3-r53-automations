@@ -1,7 +1,5 @@
 """Tests for error handling utilities."""
 
-from unittest.mock import MagicMock
-
 import pytest
 from botocore.exceptions import ClientError
 
@@ -20,31 +18,31 @@ from src.utils.error_handling import (
 class TestRoute53Exceptions:
     """Test custom exception classes."""
 
-    def test_route53_error(self):
+    def test_route53_error(self) -> None:
         """Test base Route53Error exception."""
         error = Route53Error("Test error")
         assert str(error) == "Test error"
         assert isinstance(error, Exception)
 
-    def test_route53_not_found_error(self):
+    def test_route53_not_found_error(self) -> None:
         """Test Route53NotFoundError exception."""
         error = Route53NotFoundError("Resource not found")
         assert str(error) == "Resource not found"
         assert isinstance(error, Route53Error)
 
-    def test_route53_validation_error(self):
+    def test_route53_validation_error(self) -> None:
         """Test Route53ValidationError exception."""
         error = Route53ValidationError("Invalid input")
         assert str(error) == "Invalid input"
         assert isinstance(error, Route53Error)
 
-    def test_route53_permission_error(self):
+    def test_route53_permission_error(self) -> None:
         """Test Route53PermissionError exception."""
         error = Route53PermissionError("Access denied")
         assert str(error) == "Access denied"
         assert isinstance(error, Route53Error)
 
-    def test_route53_throttle_error(self):
+    def test_route53_throttle_error(self) -> None:
         """Test Route53ThrottleError exception."""
         error = Route53ThrottleError("Rate limit exceeded")
         assert str(error) == "Rate limit exceeded"
@@ -54,21 +52,21 @@ class TestRoute53Exceptions:
 class TestHandleAwsErrors:
     """Test handle_aws_errors decorator."""
 
-    def test_handle_aws_errors_decorator_success(self):
+    def test_handle_aws_errors_decorator_success(self) -> None:
         """Test decorator with successful function execution."""
 
         @handle_aws_errors()
-        def successful_function():
+        def successful_function() -> str:
             return "success"
 
         result = successful_function()
         assert result == "success"
 
-    def test_handle_aws_errors_client_error_not_found(self):
+    def test_handle_aws_errors_client_error_not_found(self) -> None:
         """Test decorator with NoSuchHostedZone error."""
 
         @handle_aws_errors()
-        def failing_function():
+        def failing_function() -> None:
             raise ClientError(
                 {"Error": {"Code": "NoSuchHostedZone", "Message": "Zone not found"}},
                 "ListResourceRecordSets",
@@ -77,11 +75,11 @@ class TestHandleAwsErrors:
         with pytest.raises(Route53NotFoundError, match="Zone not found"):
             failing_function()
 
-    def test_handle_aws_errors_client_error_invalid_input(self):
+    def test_handle_aws_errors_client_error_invalid_input(self) -> None:
         """Test decorator with InvalidInput error."""
 
         @handle_aws_errors()
-        def failing_function():
+        def failing_function() -> None:
             raise ClientError(
                 {"Error": {"Code": "InvalidInput", "Message": "Invalid parameter"}},
                 "ChangeResourceRecordSets",
@@ -90,11 +88,11 @@ class TestHandleAwsErrors:
         with pytest.raises(Route53ValidationError, match="Invalid parameter"):
             failing_function()
 
-    def test_handle_aws_errors_client_error_access_denied(self):
+    def test_handle_aws_errors_client_error_access_denied(self) -> None:
         """Test decorator with AccessDenied error."""
 
         @handle_aws_errors()
-        def failing_function():
+        def failing_function() -> None:
             raise ClientError(
                 {"Error": {"Code": "AccessDenied", "Message": "Access denied"}},
                 "CreateHostedZone",
@@ -103,11 +101,11 @@ class TestHandleAwsErrors:
         with pytest.raises(Route53PermissionError, match="Access denied"):
             failing_function()
 
-    def test_handle_aws_errors_client_error_throttling(self):
+    def test_handle_aws_errors_client_error_throttling(self) -> None:
         """Test decorator with Throttling error."""
 
         @handle_aws_errors()
-        def failing_function():
+        def failing_function() -> None:
             raise ClientError(
                 {"Error": {"Code": "Throttling", "Message": "Rate exceeded"}},
                 "ChangeResourceRecordSets",
@@ -120,7 +118,7 @@ class TestHandleAwsErrors:
 class TestValidationFunctions:
     """Test validation utility functions."""
 
-    def test_validate_hosted_zone_id_valid(self):
+    def test_validate_hosted_zone_id_valid(self) -> None:
         """Test validation of valid hosted zone IDs."""
         valid_ids = [
             "Z1234567890123",
@@ -131,7 +129,7 @@ class TestValidationFunctions:
         for zone_id in valid_ids:
             validate_hosted_zone_id(zone_id)  # Should not raise
 
-    def test_validate_hosted_zone_id_invalid(self):
+    def test_validate_hosted_zone_id_invalid(self) -> None:
         """Test validation of invalid hosted zone IDs."""
         invalid_ids = [
             "",  # Empty
@@ -144,13 +142,13 @@ class TestValidationFunctions:
             with pytest.raises(Route53ValidationError):
                 validate_hosted_zone_id(zone_id)
 
-    def test_validate_hosted_zone_id_prefix_removal(self):
+    def test_validate_hosted_zone_id_prefix_removal(self) -> None:
         """Test removal of /hostedzone/ prefix."""
         zone_id_with_prefix = "/hostedzone/Z1234567890123"
         result = validate_hosted_zone_id(zone_id_with_prefix)
         assert result == "Z1234567890123"
 
-    def test_validate_domain_name_valid(self):
+    def test_validate_domain_name_valid(self) -> None:
         """Test validation of valid domain names."""
         valid_domains = [
             "example.com",
@@ -163,7 +161,7 @@ class TestValidationFunctions:
         for domain in valid_domains:
             validate_domain_name(domain)  # Should not raise
 
-    def test_validate_domain_name_invalid(self):
+    def test_validate_domain_name_invalid(self) -> None:
         """Test validation of invalid domain names."""
         invalid_domains = [
             "",  # Empty
@@ -174,7 +172,7 @@ class TestValidationFunctions:
             with pytest.raises(Route53ValidationError):
                 validate_domain_name(domain)
 
-    def test_validate_domain_name_normalization(self):
+    def test_validate_domain_name_normalization(self) -> None:
         """Test domain name normalization (adding trailing dot)."""
         test_cases = [
             ("example.com", "example.com."),

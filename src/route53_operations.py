@@ -1,6 +1,6 @@
-from typing import List
+from typing import Any, Dict, List, cast
 
-from botocore.client import BaseClient
+from mypy_boto3_route53.client import Route53Client
 
 from .utils.error_handling import (
     Route53Error,
@@ -15,7 +15,7 @@ from .utils.rate_limiter import rate_limit
 class Route53Operations:
     """Manages Route 53 operations like creating or updating DNS records."""
 
-    def __init__(self, route53_client: BaseClient):
+    def __init__(self, route53_client: Route53Client):
         """
         Initialize Route 53 operations.
 
@@ -77,16 +77,16 @@ class Route53Operations:
             self.logger.debug(f"Configuring DNS: {hostname} → {load_balancer_ip}")
 
         response = self.client.change_resource_record_sets(
-            HostedZoneId=hosted_zone_id, ChangeBatch={"Changes": changes}
+            HostedZoneId=hosted_zone_id, ChangeBatch={"Changes": cast(Any, changes)}
         )
-        change_id = response["ChangeInfo"]["Id"]
+        change_id = str(response["ChangeInfo"]["Id"])
         self.logger.info(f"Created DNS records successfully (Change ID: {change_id})")
 
         return change_id
 
     @rate_limit()
     @handle_aws_errors(logger=get_logger(__name__))
-    def list_records(self, hosted_zone_id: str) -> List[dict]:
+    def list_records(self, hosted_zone_id: str) -> List[Dict[str, Any]]:
         """
         List all records in a hosted zone.
 
@@ -105,7 +105,7 @@ class Route53Operations:
         response = self.client.list_resource_record_sets(HostedZoneId=hosted_zone_id)
         records = response.get("ResourceRecordSets", [])
         self.logger.info(f"Found {len(records)} records in zone {hosted_zone_id}")
-        return records
+        return cast(List[Dict[str, Any]], records)
 
     @rate_limit(adaptive=True)
     @handle_aws_errors(logger=get_logger(__name__))
@@ -149,9 +149,9 @@ class Route53Operations:
             self.logger.debug(f"Deleting DNS: {hostname}")
 
         response = self.client.change_resource_record_sets(
-            HostedZoneId=hosted_zone_id, ChangeBatch={"Changes": changes}
+            HostedZoneId=hosted_zone_id, ChangeBatch={"Changes": cast(Any, changes)}
         )
-        change_id = response["ChangeInfo"]["Id"]
+        change_id = str(response["ChangeInfo"]["Id"])
         self.logger.info(f"Deleted DNS records successfully (Change ID: {change_id})")
 
         return change_id
@@ -177,6 +177,6 @@ class Route53Operations:
         self.logger.debug(f"Checking status for change ID: {change_id}")
 
         response = self.client.get_change(Id=change_id)
-        status = response["ChangeInfo"]["Status"]
+        status: str = response["ChangeInfo"]["Status"]
         self.logger.debug(f"Change {change_id} status: {status}")
         return status

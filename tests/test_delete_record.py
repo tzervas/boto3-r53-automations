@@ -1,8 +1,9 @@
 """Tests for Route53Operations delete functionality."""
 
+from typing import Any
+
 import boto3
 import pytest
-from botocore.exceptions import ClientError
 from moto import mock_aws
 
 from src.route53_operations import Route53Operations
@@ -10,7 +11,7 @@ from src.utils.error_handling import Route53NotFoundError, Route53ValidationErro
 
 
 @pytest.fixture
-def route53_client():
+def route53_client() -> Any:
     """Provide a mocked Route53 client."""
     with mock_aws():
         session = boto3.Session(region_name="us-east-1")
@@ -18,18 +19,20 @@ def route53_client():
 
 
 @pytest.fixture
-def hosted_zone(route53_client):
+def hosted_zone(route53_client: Any) -> str:
     """Create a test hosted zone."""
     hosted_zone = route53_client.create_hosted_zone(
         Name="example.com", CallerReference="test-delete"
     )
-    return hosted_zone["HostedZone"]["Id"].split("/")[-1]
+    return str(hosted_zone["HostedZone"]["Id"].split("/")[-1])
 
 
 class TestRoute53OperationsDelete:
     """Test cases for Route53Operations delete functionality."""
 
-    def test_delete_dns_records_success(self, route53_client, hosted_zone):
+    def test_delete_dns_records_success(
+        self, route53_client: Any, hosted_zone: str
+    ) -> None:
         """Test successful deletion of DNS records."""
         operations = Route53Operations(route53_client)
 
@@ -76,7 +79,9 @@ class TestRoute53OperationsDelete:
         assert not api_record_exists_after
         assert not web_record_exists_after
 
-    def test_delete_dns_records_partial_success(self, route53_client, hosted_zone):
+    def test_delete_dns_records_partial_success(
+        self, route53_client: Any, hosted_zone: str
+    ) -> None:
         """Test deletion when only some records exist."""
         operations = Route53Operations(route53_client)
 
@@ -97,7 +102,7 @@ class TestRoute53OperationsDelete:
 
         assert change_id.startswith("/change/")
 
-    def test_delete_dns_records_invalid_zone_id(self, route53_client):
+    def test_delete_dns_records_invalid_zone_id(self, route53_client: Any) -> None:
         """Test deletion with invalid hosted zone ID."""
         operations = Route53Operations(route53_client)
 
@@ -106,7 +111,9 @@ class TestRoute53OperationsDelete:
                 hosted_zone_id="invalid-zone", domain="example.com", services=["api"]
             )
 
-    def test_delete_dns_records_invalid_domain(self, route53_client, hosted_zone):
+    def test_delete_dns_records_invalid_domain(
+        self, route53_client: Any, hosted_zone: str
+    ) -> None:
         """Test deletion with invalid domain."""
         operations = Route53Operations(route53_client)
 
@@ -115,7 +122,9 @@ class TestRoute53OperationsDelete:
                 hosted_zone_id=hosted_zone, domain="", services=["api"]
             )
 
-    def test_delete_dns_records_empty_services(self, route53_client, hosted_zone):
+    def test_delete_dns_records_empty_services(
+        self, route53_client: Any, hosted_zone: str
+    ) -> None:
         """Test deletion with empty services list."""
         operations = Route53Operations(route53_client)
 
@@ -126,7 +135,7 @@ class TestRoute53OperationsDelete:
                 hosted_zone_id=hosted_zone, domain="example.com", services=[]
             )
 
-    def test_delete_dns_records_nonexistent_zone(self, route53_client):
+    def test_delete_dns_records_nonexistent_zone(self, route53_client: Any) -> None:
         """Test deletion with non-existent hosted zone."""
         operations = Route53Operations(route53_client)
 
