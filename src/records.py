@@ -1,9 +1,5 @@
 from abc import ABC, abstractmethod
-<<<<<<< feature/production-ready-improvements
 from typing import Any, Dict, List, Optional, Type, TypedDict
-=======
-from typing import Optional, List, Dict, Type, TypedDict, Any
->>>>>>> main
 
 
 # AliasTarget TypedDict for Route 53 alias records
@@ -126,12 +122,8 @@ class MXRecord(DnsRecord):
         Args:
             name: The name of the record.
             ttl: Time to live in seconds (default: 300).
-<<<<<<< feature/production-ready-improvements
             values: List of strings in the format 'preference mail_server'
                    (e.g., '10 mail.example.com').
-=======
-            values: List of strings in the format 'preference mail_server' (e.g., '10 mail.example.com').
->>>>>>> main
         """
         super().__init__(name, ttl)
         if not values:
