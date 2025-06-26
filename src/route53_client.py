@@ -1,14 +1,9 @@
-<<<<<<< feature/production-ready-improvements
 from typing import Any
 
 import boto3
 
 from .utils.error_handling import Route53Error, handle_aws_errors
 from .utils.logging import get_logger
-=======
-import boto3
-from typing import Any
->>>>>>> main
 
 
 class Route53Client:
@@ -21,7 +16,6 @@ class Route53Client:
         Args:
             session: A boto3 session object.
         """
-<<<<<<< feature/production-ready-improvements
         self.logger = get_logger(__name__)
 
         try:
@@ -52,10 +46,3 @@ class Route53Client:
         except Exception as e:
             self.logger.warning(f"Could not retrieve client info: {e}")
             return {"status": "Error retrieving client info"}
-=======
-        self.client = session.client("route53")
-
-    def get_client(self) -> Any:
-        """Return the Route 53 client."""
-        return self.client
->>>>>>> main
