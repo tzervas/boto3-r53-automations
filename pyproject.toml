@@ -1,11 +1,10 @@
 [project]
-<<<<<<< feature/production-ready-improvements
 name = "boto3-r53-automations"
 version = "0.1.0"
 description = "A modular Route 53 automation tool for AWS DNS management"
 readme = "README.md"
 authors = [
-    {name = "Tyler Zervas", email = "tyler@example.com"}
+    {name = "Tyler Zervas", email = "tz-dev@vectorweight.com"}
 ]
 license = {text = "MIT"}
 requires-python = ">=3.12"
@@ -28,23 +27,11 @@ classifiers = [
 Homepage = "https://github.com/tzervas/boto3-r53-automations"
 Repository = "https://github.com/tzervas/boto3-r53-automations"
 Issues = "https://github.com/tzervas/boto3-r53-automations/issues"
-=======
-name = "aws-boto3-modules"
-version = "0.1.0"
-description = "A modular Route 53 automation tool"
-readme = "README.md"
-requires-python = ">=3.12"
-dependencies =  [
-    "boto3>=1.38.43",
-    "botocore>=1.38.43",
-]
->>>>>>> main
 
 [tool.uv]
 dev-dependencies = [
     "pytest>=8.4.1",
     "moto>=5.1.6",
-<<<<<<< feature/production-ready-improvements
     "black>=24.0.0",
     "isort>=5.13.0",
     "mypy>=1.8.0",
@@ -99,11 +86,9 @@ ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 minversion = "6.0"
+pythonpath = ["."]
 addopts = "-ra -q --strict-markers --cov=src --cov-report=term-missing"
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
-=======
-]
->>>>>>> main

@@ -1,6 +1,10 @@
-from typing import Any, Dict, List, cast
+from typing import TYPE_CHECKING, Any, Dict, List, cast
 
-from mypy_boto3_route53.client import Route53Client
+if TYPE_CHECKING:
+    from mypy_boto3_route53.client import Route53Client
+else:
+    # Runtime: accept any boto3 Route53 client without hard stub dependency
+    Route53Client = Any  # type: ignore[misc,assignment]
 
 from .utils.error_handling import (
     Route53Error,
