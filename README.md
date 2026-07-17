@@ -1,5 +1,10 @@
 # Boto3 Route53 Automations
 
+<!-- FLEET-BADGES:BEGIN -->
+[![CI](https://github.com/tzervas/boto3-r53-automations/actions/workflows/fleet-ci.yml/badge.svg?branch=main)](https://github.com/tzervas/boto3-r53-automations/actions/workflows/fleet-ci.yml?query=branch%3Amain)
+[![Security](https://github.com/tzervas/boto3-r53-automations/actions/workflows/fleet-security.yml/badge.svg?branch=main)](https://github.com/tzervas/boto3-r53-automations/actions/workflows/fleet-security.yml?query=branch%3Amain)
+<!-- FLEET-BADGES:END -->
+
 A Python-based automation toolkit for managing AWS Route 53 DNS records and hosted zones. This project provides a set of utilities and scripts to streamline common Route 53 operations using the AWS SDK (boto3).
 
 ## Features
